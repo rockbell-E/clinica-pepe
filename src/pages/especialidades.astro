@@ -1,15 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { pool } from "../lib/db.js";
+
+let especialidades = [];
+
+try {
+  const [rows] = await pool.query("SELECT * FROM especialidades ORDER BY nombre ASC");
+  especialidades = rows;
+} catch (error) {
+  console.error("❌ Error al conectar con MySQL:", error);
+}
 ---
 
 <Layout title="Especialidades">
-    <div class="text-center py-4" style="background-image: url();">
-        <h1 class="font-extrabold text-6xl">Especialidades</h1>
-    </div>
+  <h1 class="text-3xl font-bold text-center py-6">Especialidades</h1>
 
-
-
-    <div>
-        <a href="#">Nombre de la especialidad (Por resolver)</a>
-    </div>
+  <ul class="max-w-2xl mx-auto space-y-4">
+    {especialidades.map(esp => (
+      <li class="p-4 bg-white shadow rounded">
+        <h2 class="text-xl font-semibold text-blue-600">{esp.nombre}</h2>
+        <p class="text-gray-600">{esp.descripcion}</p>
+      </li>
+    ))}
+  </ul>
 </Layout>
