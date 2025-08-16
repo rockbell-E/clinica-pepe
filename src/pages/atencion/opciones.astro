@@ -3,14 +3,34 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div class="bg-[url(/atencionIMG/teclado.webp)] bg-no-repeat bg-cover h-[26rem]">
-        <div class="w-[30rem] py-10 ml-[1/4] pl-32">
-            <div class="bg-sky-600 text-white flex flex-col px-10">
-                <div class="my-10">
-                    <h1 class="py-4 text-3xl pb-8">¿Necesitas ayuda?</h1>
-                    <p>Agenda tus horas médicas, consulta los resultados de tus exámenes de laboratorio, realiza pagos de hospitalización, explora nuestras unidades de atención y accede a muchos otros servicios.</p>
-                </div>
-            </div>
+    <div 
+        class="h-[25rem] relative inline-block
+        sm:h-[25rem] sm:w-full"
+        >
+
+        <img 
+            src="/atencionIMG/teclado.webp" 
+            alt="imagen del banner" 
+            class="h-1/2 w-full
+            sm:h-full sm:w-full"
+            >
+
+        <div 
+            class="h-1/2 bg-blue-300 
+                sm:absolute sm:top-[25%] sm:bg-blue-300/75"
+                >
+
+            <h1 
+                class="text-3xl pl-4 py-5 font-bold
+                sm:text-4xl">
+                ¿Necesitas ayuda?
+            </h1>
+
+            <p 
+            class="px-4 font-bold 
+            sm:mb-7 sm:text-[1.2rem]">
+                Agenda tus horas médicas, consulta los resultados de tus exámenes de laboratorio, realiza pagos de hospitalización, explora nuestras unidades de atención y accede a muchos otros servicios.
+            </p>
         </div>
     </div>
 </Layout>
