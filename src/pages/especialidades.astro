@@ -1,15 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { pool } from "../lib/db.js";
+
+// Obtengo todas las especialidades ordenadas por nombre
+const [especialidades] = await pool.query("SELECT * FROM especialidades ORDER BY nombre ASC");
+
+// Leo parámetro de query (?letra=A)
+const letraSeleccionada = Astro.url.searchParams.get("letra") || "C";
+
+const filtradas = especialidades.filter(e =>
+  e.nombre.toUpperCase().startsWith(letraSeleccionada)
+);
 ---
-
 <Layout title="Especialidades">
-    <div class="text-center py-4" style="background-image: url();">
-        <h1 class="font-extrabold text-6xl">Especialidades</h1>
-    </div>
+  <h1 class="text-4xl font-bold text-center py-6">Especialidades</h1>
 
+  <div class="container mx-auto flex">
+    <!-- Panel de letras -->
+    <aside class="w-1/4 flex flex-col gap-2">
+      { "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("").map(letra => (
+        <a href={`?letra=${letra}`}
+           class={`px-3 py-2 border rounded text-center
+             ${letraSeleccionada === letra 
+               ? "bg-blue-500 text-white" 
+               : "bg-gray-100 hover:bg-blue-200"}`}>
+          {letra}
+        </a>
+      ))}
+    </aside>
 
-
-    <div>
-        <a href="#">Nombre soy una cosa pero vale de la especialidad (Por resolver)</a>
-    </div>
+    <!-- Lista de especialidades -->
+    <main class="w-3/4 pl-6">
+      <h2 class="text-xl font-bold mb-4">Con {letraSeleccionada}</h2>
+      <ul class="space-y-2">
+        {filtradas.map(esp => (
+          <li class="p-3 border rounded bg-white shadow-sm hover:bg-blue-50">
+            <a href={`/especialidades/${esp.id}`} class="font-semibold text-blue-600">
+              {esp.nombre}
+            </a>
+            <p class="text-sm text-gray-600">{esp.descripcion}</p>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </div>
 </Layout>

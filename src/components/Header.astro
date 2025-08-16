@@ -1,23 +1,117 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
-
-
 ---
 
-<header class="px-4 py-4 bg-blue-300 flex w-auto">
-    <div>
-        <a href="/">
-            <img class="w-25 pl-5" src="/logo.png" alt="logo de la clinica">
-        </a>
+<header class="px-6 py-4 bg-blue-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img class="w-28" src="/logo.png" alt="logo de la clinica" />
+    </a>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button
+      class="md:hidden text-3xl focus:outline-none"
+      id="menu-toggle"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+
+    <!-- Menú escritorio -->
+    <nav
+      class="hidden md:flex gap-6 font-bold text-lg items-center justify-center flex-1"
+    >
+      <HeaderButton href="/">Inicio</HeaderButton>
+      <HeaderButton href="/nosotros">Sobre nosotros</HeaderButton>
+
+      <!-- Dropdown especialidades (desktop) -->
+      <div class="relative group">
+        <button class="hover:text-white">Especialidades</button>
+        <div
+          class="absolute left-1/2 -translate-x-1/2 mt-2 w-[900px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50"
+        >
+          <!-- Opciones principales -->
+          <div class="grid grid-cols-6 gap-4 p-6 text-center">
+            <a href="/especialidades/categorias/ninos" class="hover:text-blue-600">Niños</a>
+            <a href="/especialidades/categorias/adolescentes" class="hover:text-blue-600">Adolescentes</a>
+            <a href="/especialidades/categorias/mujeres" class="hover:text-blue-600">Mujeres</a>
+            <a href="/especialidades/categorias/hombres" class="hover:text-blue-600">Hombres</a>
+            <a href="/especialidades/categorias/adultos" class="hover:text-blue-600">Adultos Mayores</a>
+            <a href="/especialidades/especialidad/centro-de-salud-deportiva" class="hover:text-blue-600">Deporte</a>
+          </div>
+          <!-- Links inferiores -->
+          <div class="border-t px-6 py-4 grid grid-cols-3 text-center">
+            <a href="/especialidades/indice" class="hover:text-blue-600">Especialidades</a>
+            <a href="/especialidades/partes-del-cuerpo" class="hover:text-blue-600">Partes del cuerpo</a>
+            <a href="/indice-profesionales" class="hover:text-blue-600">Nombre del profesional</a>
+          </div>
+        </div>
+      </div>
+
+      <HeaderButton href="/reserva">¿Necesitas atención?</HeaderButton>
+      <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
+      <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
+    </nav>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden flex flex-col bg-white shadow-lg font-bold text-lg mt-2 rounded-lg overflow-hidden"
+  >
+    <a href="/" class="p-3 border-b hover:bg-blue-100 text-center">Inicio</a>
+    <a href="/nosotros" class="p-3 border-b hover:bg-blue-100 text-center">Sobre nosotros</a>
+
+    <!-- Dropdown móvil -->
+    <div class="border-b">
+      <button
+        class="w-full text-left p-3 hover:bg-blue-100 flex justify-between items-center"
+        id="dropdown-toggle"
+        
+      >
+        Especialidades <span>▼</span>
+      </button>
+      <div
+        id="mobile-dropdown"
+        class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out flex flex-col bg-gray-50"
+      >
+        <a href="/especialidades/categorias/ninos" class="p-3 pl-6 hover:bg-blue-100">Niños</a>
+        <a href="/especialidades/categorias/adolescentes" class="p-3 pl-6 hover:bg-blue-100">Adolescentes</a>
+        <a href="/especialidades/categorias/mujeres" class="p-3 pl-6 hover:bg-blue-100">Mujeres</a>
+        <a href="/especialidades/categorias/hombres" class="p-3 pl-6 hover:bg-blue-100">Hombres</a>
+        <a href="/especialidades/categorias/adultos" class="p-3 pl-6 hover:bg-blue-100">Adultos Mayores</a>
+        <a href="/especialidades/especialidad/centro-de-salud-deportiva" class="p-3 pl-6 hover:bg-blue-100">Deporte</a>
+        <div class="border-t mt-2">
+          <a href="/especialidades" class="p-3 pl-6 hover:bg-blue-100">Especialidades</a>
+          <a href="/especialidades/partes-del-cuerpo" class="p-3 pl-6 hover:bg-blue-100">Partes del cuerpo</a>
+          <a href="/indice-profesionales" class="p-3 pl-6 hover:bg-blue-100">Nombre del profesional</a>
+        </div>
+      </div>
     </div>
-    <div class="w-full flex flex-row-reverse pr-10 items-center">
-        <nav class="font-bold text-xl flex-row-reverse">
-            <HeaderButton href="/" >Inicio</HeaderButton>
-            <HeaderButton href="/nosotros">Sobre nosotros</HeaderButton>
-            <HeaderButton href="/especialidades">Especialidades</HeaderButton>
-            <HeaderButton href="/reserva">¿Necesitas atención</HeaderButton>
-            <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
-            <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
-        </nav>
-    </div>
+
+    <a href="/reserva" class="p-3 border-b hover:bg-blue-100 text-center">¿Necesitas atención?</a>
+    <a href="/ubicaciones" class="p-3 border-b hover:bg-blue-100 text-center">Ubicaciones</a>
+    <a href="/convenios" class="p-3 border-b hover:bg-blue-100 text-center">Convenios y seguros</a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Menú hamburguesa
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+
+    // Dropdown móvil
+    const dropdownBtn = document.getElementById("dropdown-toggle");
+    const dropdown = document.getElementById("mobile-dropdown");
+
+    dropdownBtn.addEventListener("click", () => {
+      if (dropdown.style.maxHeight && dropdown.style.maxHeight !== "0px") {
+        dropdown.style.maxHeight = "0px";
+      } else {
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+      }
+    });
+  </script>
 </header>
