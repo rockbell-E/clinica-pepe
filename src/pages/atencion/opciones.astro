@@ -3,34 +3,39 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div 
-        class="h-[25rem] relative inline-block
-        sm:h-[25rem] sm:w-full"
+    <div class="lg:flex lg:justify-center">
+
+
+        <div
+            class="h-[25rem] relative inline-block
+                    sm:h-[25rem] sm:w-full
+                    lg:w-[80%] lg:flex lg:border-2"
         >
-
-        <img 
-            src="/atencionIMG/teclado.webp" 
-            alt="imagen del banner" 
+            <img
+            src="/atencionIMG/teclado.webp"
+            alt="imagen del banner"
             class="h-1/2 w-full
-            sm:h-full sm:w-full"
+                        sm:h-full sm:w-full
+                        lg:w-full"
+            />
+
+            <div
+            class="h-1/2 bg-blue-300
+                            sm:absolute sm:top-[25%] sm:bg-blue-300/75
+                            lg:w-[32rem] lg:ml-5"
             >
-
-        <div 
-            class="h-1/2 bg-blue-300 
-                sm:absolute sm:top-[25%] sm:bg-blue-300/75"
-                >
-
-            <h1 
-                class="text-3xl pl-4 py-5 font-bold
-                sm:text-4xl">
+            <h1 class="text-3xl pl-4 py-5 font-bold
+                            sm:text-4xl">
                 ¿Necesitas ayuda?
             </h1>
 
-            <p 
-            class="px-4 font-bold 
-            sm:mb-7 sm:text-[1.2rem]">
-                Agenda tus horas médicas, consulta los resultados de tus exámenes de laboratorio, realiza pagos de hospitalización, explora nuestras unidades de atención y accede a muchos otros servicios.
+            <p class="px-4 font-bold
+                        sm:mb-7 sm:text-[1.2rem]">
+                Agenda tus horas médicas, consulta los resultados de tus exámenes de
+                laboratorio, realiza pagos de hospitalización, explora nuestras unidades
+                de atención y accede a muchos otros servicios.
             </p>
+            </div>
         </div>
     </div>
 </Layout>
