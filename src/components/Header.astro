@@ -1,23 +1,96 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
-
-
 ---
 
-<header class="px-4 py-4 bg-blue-300 flex w-auto">
-    <div>
-        <a href="/">
-            <img class="w-25 pl-5" src="/logo.png" alt="logo de la clinica">
-        </a>
+<header class="px-4 py-4 bg-blue-300 flex items-center justify-between relative">
+  <!-- Logo -->
+  <div>
+    <a href="/">
+      <img class="w-25 pl-2" src="/logo.png" alt="logo de la clinica" />
+    </a>
+  </div>
+
+  <!-- Botón hamburguesa (solo en móvil) -->
+  <button
+    class="md:hidden text-2xl focus:outline-none"
+    id="menu-toggle"
+    aria-label="Abrir menú"
+  >
+    ☰
+  </button>
+
+  <!-- Menú escritorio -->
+  <nav class="hidden md:flex gap-6 font-bold text-lg items-center">
+    <HeaderButton href="/">Inicio</HeaderButton>
+    <HeaderButton href="/nosotros">Sobre nosotros</HeaderButton>
+
+    <!-- Dropdown especialidades (desktop) -->
+    <div class="relative group">
+      <button class="hover:text-white">Especialidades</button>
+      <div
+        class="absolute left-0 mt-2 w-[900px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50"
+      >
+        <!-- Opciones principales -->
+        <div class="grid grid-cols-6 gap-4 p-6 text-center">
+          <a href="/especialidades/categorias/ninos" class="hover:text-blue-600">Niños</a>
+          <a href="/especialidades/categorias/adolescentes" class="hover:text-blue-600">Adolescentes</a>
+          <a href="/especialidades/categorias/mujeres" class="hover:text-blue-600">Mujeres</a>
+          <a href="/especialidades/categorias/hombres" class="hover:text-blue-600">Hombres</a>
+          <a href="/especialidades/categorias/adultos" class="hover:text-blue-600">Adultos Mayores</a>
+        </div>
+        <!-- Links inferiores -->
+        <div class="border-t px-6 py-4 grid grid-cols-3 text-center">
+          <a href="/especialidades" class="hover:text-blue-600">Especialidades</a>
+          <a href="/especialidades/partes-del-cuerpo" class="hover:text-blue-600">Partes del cuerpo</a>
+        </div>
+      </div>
     </div>
-    <div class="w-full flex flex-row-reverse pr-10 items-center">
-        <nav class="font-bold text-xl flex-row-reverse">
-            <HeaderButton href="/" >Inicio</HeaderButton>
-            <HeaderButton href="/nosotros">Sobre nosotros</HeaderButton>
-            <HeaderButton href="/especialidades">Especialidades</HeaderButton>
-            <HeaderButton href="/atencion/opciones">¿Necesitas atención?</HeaderButton>
-            <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
-            <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
-        </nav>
+
+    <HeaderButton href="/reserva">¿Necesitas atención?</HeaderButton>
+    <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
+    <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-full left-0 w-full bg-white shadow-lg flex flex-col font-bold text-lg md:hidden z-50"
+  >
+    <a href="/" class="p-3 border-b hover:bg-blue-100">Inicio</a>
+    <a href="/nosotros" class="p-3 border-b hover:bg-blue-100">Sobre nosotros</a>
+
+    <!-- Dropdown móvil -->
+    <div class="border-b">
+      <button
+        class="w-full text-left p-3 hover:bg-blue-100 flex justify-between items-center"
+        onclick="document.getElementById('mobile-dropdown').classList.toggle('hidden')"
+      >
+        Especialidades <span>▼</span>
+      </button>
+      <div id="mobile-dropdown" class="hidden flex flex-col bg-gray-50">
+        <a href="/especialidades/categorias/ninos" class="p-3 pl-6 hover:bg-blue-100">Niños</a>
+        <a href="/especialidades/categorias/adolescentes" class="p-3 pl-6 hover:bg-blue-100">Adolescentes</a>
+        <a href="/especialidades/categorias/mujeres" class="p-3 pl-6 hover:bg-blue-100">Mujeres</a>
+        <a href="/especialidades/categorias/hombres" class="p-3 pl-6 hover:bg-blue-100">Hombres</a>
+        <a href="/especialidades/categorias/adultos" class="p-3 pl-6 hover:bg-blue-100">Adultos Mayores</a>
+        <a href="/especialidades/especialidad/centro-de-salud-deportiva" class="p-3 pl-6 hover:bg-blue-100">Deporte</a>
+        <div class="border-t mt-2">
+          <a href="/especialidades/indice" class="p-3 pl-6 hover:bg-blue-100">Especialidades</a>
+          <a href="/especialidades/partes-del-cuerpo" class="p-3 pl-6 hover:bg-blue-100">Partes del cuerpo</a>
+          <a href="/indice-profesionales" class="p-3 pl-6 hover:bg-blue-100">Nombre del profesional</a>
+        </div>
+      </div>
     </div>
+
+    <a href="/reserva" class="p-3 border-b hover:bg-blue-100">¿Necesitas atención?</a>
+    <a href="/ubicaciones" class="p-3 border-b hover:bg-blue-100">Ubicaciones</a>
+    <a href="/convenios" class="p-3 border-b hover:bg-blue-100">Convenios y seguros</a>
+  </div>
+
+  <!-- Script pequeño para menú hamburguesa -->
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+  </script>
 </header>
