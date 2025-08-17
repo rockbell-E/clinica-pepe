@@ -8,7 +8,7 @@ try {
   const [rows] = await pool.query("SELECT * FROM especialidades ORDER BY nombre ASC");
   especialidades = rows;
 } catch (error) {
-  console.error("❌ Error al conectar con MySQL:", error);
+  console.error("Error al conectar con MySQL:", error);
 }
 ---
 
