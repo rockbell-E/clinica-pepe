@@ -3,14 +3,12 @@ import HeaderButton from "./HeaderButton.astro";
 ---
 
 <header class="px-4 py-4 bg-blue-300 flex items-center justify-between relative">
-  <!-- Logo -->
   <div>
     <a href="/">
       <img class="w-25 pl-2" src="/logo.png" alt="logo de la clinica" />
     </a>
   </div>
 
-  <!-- Botón hamburguesa (solo en móvil) -->
   <button
     class="md:hidden text-2xl focus:outline-none"
     id="menu-toggle"
@@ -19,18 +17,15 @@ import HeaderButton from "./HeaderButton.astro";
     ☰
   </button>
 
-  <!-- Menú escritorio -->
   <nav class="hidden md:flex gap-6 font-bold text-lg items-center">
     <HeaderButton href="/">Inicio</HeaderButton>
     <HeaderButton href="/nosotros">Sobre nosotros</HeaderButton>
 
-    <!-- Dropdown especialidades (desktop) -->
     <div class="relative group">
       <button class="hover:text-white">Especialidades</button>
       <div
         class="absolute left-0 mt-2 w-[900px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50"
       >
-        <!-- Opciones principales -->
         <div class="grid grid-cols-6 gap-4 p-6 text-center">
           <a href="/especialidades/categorias/ninos" class="hover:text-blue-600">Niños</a>
           <a href="/especialidades/categorias/adolescentes" class="hover:text-blue-600">Adolescentes</a>
@@ -38,7 +33,6 @@ import HeaderButton from "./HeaderButton.astro";
           <a href="/especialidades/categorias/hombres" class="hover:text-blue-600">Hombres</a>
           <a href="/especialidades/categorias/adultos" class="hover:text-blue-600">Adultos Mayores</a>
         </div>
-        <!-- Links inferiores -->
         <div class="border-t px-6 py-4 grid grid-cols-3 text-center">
           <a href="/especialidades" class="hover:text-blue-600">Especialidades</a>
           <a href="/especialidades/partes-del-cuerpo" class="hover:text-blue-600">Partes del cuerpo</a>
@@ -46,12 +40,11 @@ import HeaderButton from "./HeaderButton.astro";
       </div>
     </div>
 
-    <HeaderButton href="/reserva">¿Necesitas atención?</HeaderButton>
+    <HeaderButton href="/atencion/opciones">¿Necesitas atención?</HeaderButton>
     <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
     <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
   </nav>
 
-  <!-- Menú móvil -->
   <div
     id="mobile-menu"
     class="hidden absolute top-full left-0 w-full bg-white shadow-lg flex flex-col font-bold text-lg md:hidden z-50"
@@ -87,7 +80,6 @@ import HeaderButton from "./HeaderButton.astro";
     <a href="/convenios" class="p-3 border-b hover:bg-blue-100">Convenios y seguros</a>
   </div>
 
-  <!-- Script pequeño para menú hamburguesa -->
   <script>
     document.getElementById("menu-toggle").addEventListener("click", () => {
       document.getElementById("mobile-menu").classList.toggle("hidden");
