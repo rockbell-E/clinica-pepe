@@ -6,17 +6,14 @@ import Layout from "../../layouts/Layout.astro";
     <div class="lg:flex lg:justify-center text-white">
 
 
-        <div
-            class="h-[25rem] relative inline-block border-2 border-black
+        <div class="h-[25rem] relative inline-block border-2 border-black
                     sm:h-[25rem] sm:w-full
-                    lg:w-[80%] lg:flex "
-        >
+                    lg:w-[80%] lg:flex ">
             <img
             src="/atencionIMG/teclado.webp"
             alt="imagen del banner"
             class="h-1/2 w-full
-                        sm:h-full sm:w-full
-                        lg:w-full"
+                        sm:h-full sm:w-full"
             />
 
             <div
@@ -24,7 +21,7 @@ import Layout from "../../layouts/Layout.astro";
                             sm:absolute sm:top-[25%] sm:bg-blue-300/75
                             lg:w-[32rem] lg:ml-5"
             >
-            <h1 class="text-3xl pl-4 py-5 font-bold
+            <h1 class="text-3xl pl-4 py-3 font-bold
                             sm:text-4xl">
                 ¿Necesitas ayuda?
             </h1>
@@ -40,78 +37,88 @@ import Layout from "../../layouts/Layout.astro";
     </div>
 
 
-    <div class="w-full mt-3 bg-[#dedddf] flex justify-center">
-        <div class="w-[90%] pt-4">
-            <div class="bg-white rounded">
-                <div class="border-b-[1px]">
-                    <h4 class="py-4 font-bold text-xl ml-[4%]">Consultas</h4>
+    <div class="w-full pt-3 bg-[#dedddf] last:pb-6 flex flex-col items-center">
+        <div class="w-full flex flex-col items-center">
+                <div class="w-[80%] pt-6">
+                    <div class="bg-white rounded">
+                        <div class="border-b-[1px]">
+                            <h4 class="py-4 font-bold text-xl ml-[4%]">Consultas</h4>
+                        </div>
+                        <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
+                            <ul>
+                                <li><a href="/atencion/reserva">Reservar una hora</a></li>
+                                <li><a href="/atencion/anular">Anular una hora</a></li>
+                                <li><a href="/atencion/consulta">Ver información de una consulta</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
-                    <ul>
-                        <li><a href="/atencion/reserva">Reservar una hora</a></li>
-                        <li><a href="/atencion/anular">Anular una hora</a></li>
-                        <li><a href="/atencion/consulta">Ver información de una consulta</a></li>
-                    </ul>
+
+            <div class="w-[80%] pt-4">
+                <div class="bg-white rounded">
+                    <div class="border-b-[1px]">
+                        <h4 class="py-4 font-bold text-xl ml-[4%]">Exámenes de diagnóstico</h4>
+                    </div>
+                    <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
+                        <ul>
+                            <li><a href="#">Laboratorio</a></li>
+                            <li><a href="#">Radiología e imágenes</a></li>
+                            <li><a href="#">Informacion sobre exámenes</a></li>
+                            <li><a href="#">Resultado de exámenes</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center">
+            <div class="w-[80%] pt-4">
+
+                <div class="bg-white rounded">
+
+                    <div class="border-b-[1px]">
+                        <h4 class="py-4 font-bold text-xl ml-[4%]">Hospitalización</h4>
+                    </div>
+
+                    <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
+                        <ul>
+                            <li><a href="#">Presupuesto cirugía General</a></li>
+                            <li><a href="#">Pre adminisión</a></li>
+                            <li><a href="#">Hospitalidad</a></li>
+                            <li><a href="#">Centro de cirugía mayor ambulatoría</a></li>
+                            <li><a href="#">Pago de cuentas</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="w-[80%] pt-4">
+
+                <div class="bg-white rounded">
+
+                    <div class="border-b-[1px]">
+                        <h4 class="py-4 font-bold text-xl ml-[4%]">Pacientes</h4>
+                    </div>
+
+                    <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
+                        <ul>
+                            <li><a href="#">Aranceles</a></li>
+                            <li><a href="#">GES, CAEC y ley de urgencia</a></li>
+                            <li><a href="#">Derechos y deberes de los pacientes</a></li>
+                            <li><a href="#">Pagaré y mandato</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 
 
-    <div class="w-full pt-3 bg-[#dedddf] flex justify-center">
-        <div class="w-[90%] pt-4">
-            <div class="bg-white rounded">
-                <div class="border-b-[1px]">
-                    <h4 class="py-4 font-bold text-xl ml-[4%]">Exámenes de diagnóstico</h4>
-                </div>
-                <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
-                    <ul>
-                        <li><a href="#">Laboratorio</a></li>
-                        <li><a href="#">Radiología e imágenes</a></li>
-                        <li><a href="#">Informacion sobre exámenes</a></li>
-                        <li><a href="#">Resultado de exámenes</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-    <div class="w-full pt-3 bg-[#dedddf] flex justify-center">
-        <div class="w-[90%] pt-4">
-            <div class="bg-white rounded">
-                <div class="border-b-[1px]">
-                    <h4 class="py-4 font-bold text-xl ml-[4%]">Hospitalización</h4>
-                </div>
-                <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
-                    <ul>
-                        <li><a href="#">Presupuesto cirugía General</a></li>
-                        <li><a href="#">Pre adminisión</a></li>
-                        <li><a href="#">Hospitalidad</a></li>
-                        <li><a href="#">Centro de cirugía mayor ambulatoría</a></li>
-                        <li><a href="#">Pago de cuentas</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="w-full pt-3 bg-[#dedddf] flex justify-center">
-        <div class="w-[90%]">
-            <div class="bg-white rounded">
-                <div class="border-b-[1px]">
-                    <h4 class="py-4 font-bold text-xl ml-[4%]">Pacientes</h4>
-                </div>
-                <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
-                    <ul>
-                        <li><a href="#">Aranceles</a></li>
-                        <li><a href="#">GES, CAEC y ley de urgencia</a></li>
-                        <li><a href="#">Derechos y deberes de los pacientes</a></li>
-                        <li><a href="#">Pagaré y mandato</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 </Layout>
