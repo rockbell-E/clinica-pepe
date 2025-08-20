@@ -1,5 +1,6 @@
 ---
 title: Unidad del Paciente Crítico Cardiovascular
+descripcion: Sobre la unidad
 ---
 
 La **Unidad de Paciente Crítico Pediátrico (UPCP)** forma parte del **Servicio de Pediatría** y está compuesta por la **Unidad de Cuidados Intensivos (UCI)** y **la Unidad de Tratamientos Intermedios (UTI)**. Su propósito es brindar atención especializada a niños en riesgo vital o con necesidad de cuidados avanzados para prevenir complicaciones graves.

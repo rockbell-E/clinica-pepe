@@ -1,5 +1,6 @@
 ---
 title: Unidad del Paciente Crítico Pediátrico
+descripcion: Sobre la unidad
 ---
 
 Con el objetivo de ofrecer una atención de excelencia, la **Clínica Pepe** dispone de una **Unidad de Paciente Crítico Cardiovascular (UPCC)** de alto nivel, reconocida como una de las más avanzadas del país.

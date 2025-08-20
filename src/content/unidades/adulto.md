@@ -1,5 +1,6 @@
 ---
 title: Unidad del Paciente Crítico Adulto
+descripcion: Sobre la unidad
 ---
 
 La **Unidad de Paciente Crítico Adulto (UPCA)** es un espacio hospitalario especializado en la atención de personas en estado grave que requieren un manejo médico y de enfermería altamente especializado.

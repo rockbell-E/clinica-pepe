@@ -88,10 +88,16 @@ const unidades = await getCollection('unidades')
                     </div>
                     <div class="ml-[4%] mt-3 pb-8 min-h-52 max-h-fit ">
                         <ul class="list-disc list-inside">
-                            <li><a href="#">Unidad paciente crítico adulto (UPCA)</a></li>
-                            <li><a href="#">Unidad paciente crítico pediátrico (UPCP)</a></li>
-                            <li><a href="#">Unidad paciente crítico cardiovascular (UPCC)</a></li>
-                            <li><a href="#">Unidad paciente crítico neonatal</a></li>
+                            {
+                                unidades.map(unidad => {
+                                    const {slug, data} = unidad
+                                    const { title, descripcion } = data
+
+                                    return (
+                                        <li><a href={`/unidad/${slug}`}>{title}</a></li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </div>
