@@ -23,17 +23,17 @@ const unidades = await getCollection('unidades')
                             sm:absolute sm:top-[25%] sm:bg-blue-300/75 sm:h-fit
                             lg:w-[32rem] lg:ml-5"
             >
-            <h1 class="text-3xl pl-4 py-3 font-bold
-                            sm:text-4xl">
-                ¿Necesitas ayuda?
-            </h1>
+                <h1 class="text-3xl pl-4 py-3 font-bold
+                                sm:text-4xl">
+                    ¿Necesitas ayuda?
+                </h1>
 
-            <p class="px-4 font-bold pb-7
-                        sm:text-[1.2rem]">
-                Agenda tus horas médicas, consulta los resultados de tus exámenes de
-                laboratorio, realiza pagos de hospitalización, explora nuestras unidades
-                de atención y accede a muchos otros servicios.
-            </p>
+                <p class="px-4 font-bold pb-7
+                            sm:text-[1.2rem]">
+                    Agenda tus horas médicas, consulta los resultados de tus exámenes de
+                    laboratorio, realiza pagos de hospitalización, explora nuestras unidades
+                    de atención y accede a muchos otros servicios.
+                </p>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@ const unidades = await getCollection('unidades')
                                     const { title, descripcion } = data
 
                                     return (
-                                        <li><a href={`/unidad/${slug}`}>{title}</a></li>
+                                        <li><a href={`/atencion/unidad/${slug}`}>{title}</a></li>
                                     )
                                 })
                             }

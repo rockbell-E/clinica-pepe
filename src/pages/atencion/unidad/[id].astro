@@ -1,0 +1,32 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const unidades = await getCollection("unidades");
+
+    return unidades.map((unidad) => ({
+        params: { id:unidad.slug },
+        props: { unidad }
+    }))
+}
+
+const { unidad } = Astro.props
+const { data, slug } = unidad
+const { title, descripcion } = data
+const { Content } = await render(unidad)
+---
+
+<Layout title={`${title}`}>
+    <div class="bg-[#00ccff] h-[9rem] flex align-middle">
+        <div class="">
+            <h1 class="font-extrabold text-4xl pl-6">{title}</h1>
+        </div>
+    </div>
+
+    <div class="flex justify-center">
+        <div class="w-[80%]">
+            <Content>
+        </div>
+    </div>
+</Layout>
