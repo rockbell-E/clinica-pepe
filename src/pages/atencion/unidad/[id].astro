@@ -18,14 +18,18 @@ const { Content } = await render(unidad)
 ---
 
 <Layout title={`${title}`}>
-    <div class="bg-[#00ccff] h-[9rem] flex align-middle">
-        <div class="">
-            <h1 class="font-extrabold text-4xl pl-6">{title}</h1>
+    <div class="bg-[#00ccff] flex items-center">
+        <div class="top-[50%] my-12 w-full">
+            <h1 class="font-extrabold text-4xl pl-6 underline md:pl-[10%]">{title}</h1>
         </div>
     </div>
 
-    <div class="flex justify-center">
-        <div class="w-[80%]">
+    <div class="grid place-items-center py-5">
+        <div class="pb-4 font-extrabold text-2xl">
+            {descripcion}
+        </div>
+
+        <div class="w-[80%] space-y-6">
             <Content>
         </div>
     </div>

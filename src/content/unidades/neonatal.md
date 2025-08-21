@@ -9,7 +9,6 @@ La **Unidad de Neonatología** está integrada por un equipo de **Neonatólogos 
 
 Este centro asistencial dispone de **tecnología de última generación**, laboratorio propio, estudios de imágenes y equipamiento especializado, lo que permite entregar una atención **oportuna, segura y personalizada**.  
 
----
 
 ## Objetivos de la unidad
 - **Prevención perinatal**: orientación y apoyo a la familia antes, durante y después del parto.  
@@ -19,7 +18,6 @@ Este centro asistencial dispone de **tecnología de última generación**, labor
 - **Aspectos éticos y médico-legales**: acompañamiento y orientación en la toma de decisiones complejas.  
 - **Trabajo en equipo**: enfoque interdisciplinario que involucra médicos, matronas, técnicos, psicólogos, especialistas bioéticos, padres y familiares.  
 
----
 
 ## Áreas de trabajo
 La Unidad de Neonatología trabaja en coordinación con:  
@@ -27,7 +25,6 @@ La Unidad de Neonatología trabaja en coordinación con:
 - **Salas AIP (Atención Integral del Parto)**.  
 - **Clínica de Lactancia**, disponible en el periodo neonatal y post alta.  
 
----
 
 ## Principales ámbitos de acción
 - **Atención inmediata en el parto**: asistencia desde los primeros minutos para asegurar una transición normal o aplicar reanimación cardiorrespiratoria si es necesario.  
@@ -37,7 +34,6 @@ La Unidad de Neonatología trabaja en coordinación con:
 - **Apoyo prenatal**: evaluación y seguimiento de embarazos de alto riesgo mediante estudios ecográficos y consultas multidisciplinarias.  
 - **Reuniones con padres y equipo médico**: espacios de información y acompañamiento, incluso en casos de alta complejidad donde se realizan reuniones de ética para decisiones compartidas.  
 
----
 
 ## Procedimientos y apoyo especializado
 La Clínica Santa María dispone de todos los **exámenes y procedimientos necesarios** para el manejo del paciente neonatal. En casos específicos, mantiene **convenios con centros internacionales de alta complejidad**, especialmente en áreas de enfermedades metabólicas y malformativas.  
@@ -47,6 +43,5 @@ Además, la unidad ofrece:
 - **Programas de estimulación temprana** para el recién nacido.  
 - **Talleres de reanimación cardiopulmonar básica**, dirigidos a los padres y cuidadores.  
 
----
 
 De esta manera, la **Unidad de Neonatología de Clínica Santa María** se posiciona como un referente en el cuidado integral del recién nacido, combinando **tecnología avanzada, excelencia profesional y un enfoque humano y familiar**.  
