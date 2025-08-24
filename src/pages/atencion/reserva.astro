@@ -3,21 +3,47 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <img src="" alt="">
-
     <div class="text-center py-4">
         <h1 class="font-extrabold text-6xl">reserva de hora</h1>
     </div>
-
+    
     <div class=" my-10 flex justify-center text-white">
+        
+        <div class="w-[90%] border-2 bg-blue-500">
+            <div class="flex space-x-3 font-bold justify-end mr-5 my-4">
+                <p class="py-1 px-3 bg-[#2bff00] border-2 rounded-full ">1</p>
+                <p class="py-1 px-3 bg-transparent border-2 rounded-full ">2</p>
+                <p class="py-1 px-3 bg-transparent border-2 rounded-full ">3</p>
+            </div>
 
-        <div class="w-fit border-2 bg-blue-500">
-            <form action="" class="flex flex-col first:pt-6 last:pb-6 px-20">
-                <label for="rut" class="text-2xl">Ingrese RUT paciente</label>
-                <input type="text" id="rut" class="my-2 border-b-2 border-white" placeholder="xx.xxx.xxx-x">
-                <input type="submit" value="Siguiente" class="bg-[#02199e] text-white py-1">
+            <form action="" class="first:pt-6 last:pb-6">
+                <div class="px-[5%]">
+                    <label for="medica" class="w-full">
+                        Por área médica
+                    </label>
+                    <input type="radio" id="medica" value="Por área médica" name="opcion" class="hidden peer/medica" checked>
+
+                    <label for="medico" class="w-full ">
+                        Por médico / Profesional
+                    </label>
+                    <input type="radio" id="medico" value="Por área profesional" name="opcion" class="hidden peer/profesional">
+
+
+                    <div class="hidden peer-checked/medica:block">
+                        <div class="py-4">
+                            <h2>Centro de atención</h2>
+                            <p>Falta mostrar todos los centros de atencion</p>
+                            <select name="" id="">
+                                <option value="">Cardiologia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    
+
+                <input type="submit" value="enviar">
             </form>
         </div>
-            
     </div>
+
 </Layout>
