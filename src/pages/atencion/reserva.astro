@@ -8,56 +8,91 @@ import Layout from "../../layouts/Layout.astro";
     </div>
     
     
-    <div class="flex justify-center">
+    <div class="flex justify-center pt-7">
         <div class="w-[90%] bg-[#045394] text-white rounded">
-            <form action="" class="">
-                <div>
-                    <div class="">
-                        <div class="bg-[#003b6b]">
-                            <div class="py-3 underline pl-[4%]">
-                                <label for="areaMedica" class="font-extrabold">Por área médica</label>
-                            </div>
-                        </div>
-                        <input type="radio" id="areaMedica" name="busqueda" class="hidden peer/areaMedica" checked>
+            <div class="bg-[#003b6b] border-b-2">
+                <div class="py-3 underline pl-[4%]">
+                    <label for="areaMedica" class="font-extrabold">Por área médica</label>
+                </div>
+            </div>
+            <input type="radio" id="areaMedica" name="busqueda" class="hidden peer/areaMedica">
                         
-                        <div class="hidden peer-checked/areaMedica:block">
-                            
-                            <div class="pl-[4%] border-b-[1px]">
-                                <div class="py-2">
-                                    <p>Centro de atención:</p>
-                                </div>
+            <div class="hidden peer-checked/areaMedica:block">
+                <form action="">
 
-                                <div class="pb-2">
-                                    <input type="radio" id="centroAtencion" name="centroAtencion">
-                                    <label for="centroAtencion">falta pasar centro de atención por db</label>
-                                </div>
-                            </div>
-                            
-                            <div class="py-4">
-                                <select name="" id="">
-                                    <option value="">Seleccione el área medica</option>
-                                    <option value="">Por terminar Pasar áreas por db</option>
-                                </select>
-                            </div>
-
-                            <div class="py-4">
-                                <select name="" id="">
-                                    <option value="">Seleccione el área medica especifica</option>
-                                    <option value="">Por terminar Pasar áreas por db</option>
-                                </select>
-                            </div>
-                            
+                    <div class="pl-[4%] border rounded-b-[1px] py-5">
+                        <div class="pb-3">
+                            <p>Centro de atención:</p>
+                        </div>
+                        
+                        <div class="pb-2">
+                            <input type="radio" id="centroAtencion" name="centroAtencion">
+                            <label for="centroAtencion">falta pasar centro de atención por db</label>
                         </div>
                     </div>
-                </div>
-                
-                <div>
-                    <div>
-                        <label for="porMedico">Por medico / profesional</label>
-                        <input type="radio" id="porMedico" name="busqueda" class="hidden">
+                    
+                    <div class="px-[4%] space-y-10 py-8">
+                        <div class="border rounded">
+                            <select name="" id="" class="w-full">
+                                <option value="">Seleccione el área medica</option>
+                                <option value="">Por terminar Pasar áreas por db</option>
+                            </select>
+                        </div>
+                        
+                        <div class="border rounded">
+                            <select name="" id="" class="w-full">
+                                <option value="">Seleccione el área medica especifica</option>
+                                <option value="">Por terminar Pasar áreas por db</option>
+                            </select>
+                        </div>
                     </div>
+
+                    <div class="flex justify-center pb-4">
+                        <div class="border-2 py-1 px-5 rounded bg-[#003b6b] hover:bg-[#036fc7] ">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-[#003b6b]">
+                <div class="py-3 underline pl-[4%]">
+                    <label for="porMedico" class="font-extrabold">Por médico / profesional</label>
                 </div>
-            </form>
+            </div>
+            <input type="radio" id="porMedico" name="busqueda" class="hidden peer/porMedico">
+                        
+            <div class="hidden peer-checked/porMedico:block">
+                <form action="">
+
+                    <div class="pl-[4%] border rounded-b-[1px] py-5">
+                        <div class="pb-3">
+                            <p>Centro de atención:</p>
+                        </div>
+                        
+                        <div class="pb-2">
+                            <input type="radio" id="centroAtencion" name="centroAtencion">
+                            <label for="centroAtencion">falta pasar centro de atención por db</label>
+                        </div>
+                    </div>
+                    
+                    <div class="px-[4%] space-y-10 py-8">
+                        <div class="border rounded">
+                            <input type="text" placeholder="Ingrese el nombre del médico / profesional" class="w-full pl-2">
+                        </div>
+                        
+                        <div class="border rounded">
+                            <input type="text" placeholder="Ingrese el apellido del médico / profesional" class="w-full pl-2">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center pb-4">
+                        <div class="border-2 py-1 px-5 rounded bg-[#003b6b] hover:bg-[#036fc7] ">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </Layout>
