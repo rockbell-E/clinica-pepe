@@ -1,0 +1,54 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const res = await fetch(Astro.url.origin + "/api/especialidades");
+const especialidades = await res.json();
+
+const especialidadesPorLetra = especialidades.reduce((acc: { [x: string]: any[]; }, esp: { nombre: string[]; }) => {
+  const letra = esp.nombre[0].toUpperCase();
+  if (!acc[letra]) acc[letra] = [];
+  acc[letra].push(esp);
+  return acc;
+}, {});
+
+const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZÑ".split("");
+---
+
+<Layout title="Especialidades">
+  <section class="p-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Índice de Especialidades</h1>
+
+    <div class="grid grid-cols-8 md:grid-cols-12 gap-2 mb-8">
+      {letras.map((letra) => (
+        <a
+          href={`#${letra}`}
+          class={`p-2 text-center rounded transition ${
+            especialidadesPorLetra[letra]
+              ? "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-gray-200 text-gray-400 cursor-not-allowed"
+          }`}
+        >
+          {letra}
+        </a>
+      ))}
+    </div>
+
+    <div class="space-y-8">
+      {Object.keys(especialidadesPorLetra).sort().map((letra) => (
+        <div id={letra}>
+          <h2 class="text-2xl font-semibold text-blue-600 mb-3">{letra}</h2>
+          <ul class="list-disc list-inside space-y-1">
+            {especialidadesPorLetra[letra].map((esp: { id: any; nombre: unknown; }) => (
+              <li>
+                <a href={`/especialidades/${esp.id}`} class="text-blue-600 hover:underline">
+                  {esp.nombre}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <hr class="mt-4 border-gray-300" />
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
