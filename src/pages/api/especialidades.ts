@@ -7,14 +7,18 @@ export const GET: APIRoute = async () => {
       "SELECT id, nombre FROM especialidades ORDER BY nombre ASC"
     );
 
-    return new Response(JSON.stringify(rows), {
+    const especialidades = Array.isArray(rows) ? rows : [];
+
+    return new Response(JSON.stringify(especialidades), {
+      status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
     console.error("Error al consultar especialidades:", err);
-    return new Response(
-      JSON.stringify({ error: "Error consultando la base de datos" }),
-      { status: 500 }
-    );
+
+    return new Response(JSON.stringify([]), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };
